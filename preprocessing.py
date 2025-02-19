@@ -26,6 +26,8 @@ BLACKLIST_DIR = [
     "cdk.out",
     ".aws-sam",
     ".terraform",
+    "README.md",
+    ".md",
 ]
 WHITELIST_FILES = [".cs", ".cshtml", ".sln", ".csproj", ".js", ".py", ".rs", ".java"]
 BLACKLIST_FILES = ["docker-compose.yml"]
@@ -73,6 +75,8 @@ def get_language_from_extension(file_ext):
         ".rs": LanguageEnum.RUST,
         ".cs": LanguageEnum.CSHARP,
         ".cshtml": LanguageEnum.CSHARP,
+        ".csproj": LanguageEnum.CSHARP,
+        ".sln": LanguageEnum.CSHARP,
         # Add other extensions and languages as needed
     }
     return FILE_EXTENSION_LANGUAGE_MAP.get(file_ext)
